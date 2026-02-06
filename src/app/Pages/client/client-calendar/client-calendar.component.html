@@ -1,0 +1,85 @@
+<div class="booking-wrapper">
+
+  <!-- LEFT -->
+  <div class="programs">
+    <h2>Coaching Programs</h2>
+
+    <div class="program">
+      <h3>Positive Psychology Coaching</h3>
+    </div>
+
+    <div class="program">
+      <h3>Bond & Bliss</h3>
+      <p>(Getting Ready for Your Marriage Before It Starts)</p>
+      <p>(Singles & Couples)</p>
+    </div>
+
+    <div class="program">
+      <h3>Relationship Coaching</h3>
+    </div>
+
+    <div class="program">
+      <h3>Personal Planning Journey</h3>
+      <p>(Your Authentic Transformational Journey)</p>
+    </div>
+
+    <div class="program">
+      <h3>Professional Coaching</h3>
+      <p>
+        (6 Month Journey of Comprehensive Training,<br />
+        Followed by Ongoing Follow-up and Mentoring Sessions)
+      </p>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="calendar-section">
+
+    <p-calendar
+  [(ngModel)]="selectedDate"
+  [minDate]="today"
+  [inline]="true"
+  [disabledDates]="disabledDates"
+  [disabledDays]="disabledWeekDays"
+  (onSelect)="onDateSelect()">
+</p-calendar>
+
+    <div class="slots" *ngIf="availableTimes.length">
+      <button
+        *ngFor="let t of availableTimes"
+        pButton
+        class="slot-btn"
+        label="{{ t }}"
+        (click)="openBooking(t)">
+      </button>
+    </div>
+
+    <p class="no-slots" *ngIf="selectedDate && !availableTimes.length">
+      No available sessions for this day
+    </p>
+
+  </div>
+</div>
+
+<p-dialog
+  header="Book Your Session"
+  [(visible)]="showDialog"
+  modal>
+
+  <div class="dialog-content">
+    <input pInputText placeholder="Your Name" [(ngModel)]="name" />
+
+    <p-dropdown
+      [options]="sessionTypes"
+      placeholder="Session Type"
+      [(ngModel)]="type">
+    </p-dropdown>
+
+    <button
+      pButton
+      label="Confirm Booking"
+      class="confirm-btn"
+      (click)="confirmBooking()">
+    </button>
+  </div>
+</p-dialog>

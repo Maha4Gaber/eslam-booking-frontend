@@ -1,0 +1,64 @@
+.booking-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  padding: 4rem;
+  color: #f5f5f5;
+}
+
+.programs {
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #f3c77a;
+  }
+}
+
+.program {
+  margin-bottom: 1.8rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: .3rem 0;
+    font-size: .9rem;
+    color: #d0d0d0;
+  }
+}
+
+.calendar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slots {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(90px, 1fr));
+  gap: 1rem;
+}
+
+.slot-btn {
+  width: 100%;
+}
+
+.booking-dialog {
+  width: 350px;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.confirm-btn {
+  background: linear-gradient(135deg, #f3c77a, #d9a441);
+  border: none;
+  color: #000;
+  font-weight: 600;
+}

@@ -1,0 +1,31 @@
+.app-bg {
+  min-height: 100vh;
+  margin: 0;
+  background: 
+    linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)),
+    url('/assets/hero.jpg') center/cover no-repeat;
+}
+
+.home-header {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: 
+    linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9));
+  
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f3c77a;
+}
+.home-header button:focus{
+  border: none;
+  outline: none !important;
+}
