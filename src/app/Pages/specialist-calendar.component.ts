@@ -43,12 +43,17 @@ import { CommonModule } from '@angular/common';
         </ng-container>
 
         <div *ngFor="let s of sessions" class="slot-card">
-          <div class="time">{{ s.time }}</div>
-          <div class="info">
-            <div class="name">{{ s.clientName }}</div>
-            <div class="type">{{ s.type }}</div>
-          </div>
-        </div>
+  <div class="time">
+    {{ s.dateTime | date: 'HH:mm' }}
+  </div>
+  <div class="info">
+    <div class="mt-1"><strong>Client:</strong> {{ s.clientName }}</div>
+    <div class="mt-1"><strong>Email:</strong> {{ s.email }}</div>
+    <div class="mt-1"><strong>Phone:</strong> {{ s.phone }}</div>
+    <div class="mt-1"><strong>Service:</strong> {{ s.serviceType }}</div>
+   
+  </div>
+</div>
       </div>
 
     </div>

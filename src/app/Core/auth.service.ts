@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private baseUrl = 'http://localhost:8080/api/vi/auth'; // mockoon or real API
+  private baseUrl = 'https://reservation-production-d908.up.railway.app/api/v1/auth'; // mockoon or real API
 
   constructor(private http: HttpClient) {}
 

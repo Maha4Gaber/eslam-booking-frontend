@@ -82,7 +82,7 @@ export class SpecialistLoginComponent {
           this.loading = false;
 
           // save token
-          localStorage.setItem('token', res.token);
+          localStorage.setItem('token', res.accessToken);
 
           this.messageService.add({
             severity: 'success',
@@ -96,7 +96,7 @@ export class SpecialistLoginComponent {
         },
         error: () => {
           this.loading = false;
-            this.router.navigate(['/specialist/calendar']);
+           
 
           this.messageService.add({
             severity: 'error',

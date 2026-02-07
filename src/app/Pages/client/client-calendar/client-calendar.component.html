@@ -36,13 +36,12 @@
   <div class="calendar-section">
 
     <p-calendar
-  [(ngModel)]="selectedDate"
-  [minDate]="today"
-  [inline]="true"
-  [disabledDates]="disabledDates"
-  [disabledDays]="disabledWeekDays"
-  (onSelect)="onDateSelect()">
-</p-calendar>
+    [(ngModel)]="selectedDate"
+    [minDate]="today"
+    [inline]="true"
+    [disabledDays]="disabledWeekDays"
+    (onSelect)="onDateSelect()">
+  </p-calendar>
 
     <div class="slots" *ngIf="availableTimes.length">
       <button
@@ -64,15 +63,22 @@
 <p-dialog
   header="Book Your Session"
   [(visible)]="showDialog"
-  modal>
+  [style]="{ width: '50vw', height: '400px' }"
+  [modal]="true"
+  >
 
   <div class="dialog-content">
     <input pInputText placeholder="Your Name" [(ngModel)]="name" />
+    <input pInputText type="email" placeholder="Your Email" [(ngModel)]="email" />
+    <input pInputText placeholder="Your Phone" [(ngModel)]="phone" />
 
     <p-dropdown
       [options]="sessionTypes"
       placeholder="Session Type"
-      [(ngModel)]="type">
+      [(ngModel)]="type"
+      [appendTo]="'body'"
+      class="w-full"
+      >
     </p-dropdown>
 
     <button

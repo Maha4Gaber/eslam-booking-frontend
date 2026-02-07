@@ -1,0 +1,10 @@
+services:
+  - type: static
+    name: angular-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist/your-project-name
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
