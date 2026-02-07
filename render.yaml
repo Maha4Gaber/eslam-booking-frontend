@@ -3,7 +3,7 @@ services:
     name: angular-frontend
     env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: dist/your-project-name
+    staticPublishPath: dist/specialist-app
     routes:
       - type: rewrite
         source: /*
